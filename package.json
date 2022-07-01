@@ -1,0 +1,21 @@
+{
+  "name": "bufbuild",
+  "version": "0.1.0",
+  "description": "Provides Buf binary as NPM package",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjincho/bufbuild.git"
+  },
+  "author": "Seongjin Cho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sjincho/bufbuild/issues"
+  },
+  "homepage": "https://github.com/sjincho/bufbuild",
+  "devDependencies": {
+    "standard": "^17.0.0"
+  },
+  "scripts": {
+    "test": "standard"
+  }
+}
