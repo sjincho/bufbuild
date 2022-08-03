@@ -35,6 +35,13 @@ async function main () {
     }
   }
 
+  // Add node_modules/.bin to the PATH.
+  // This will allow using protoc and plugins installed through NPM.
+  const nodeModulesBin = getNodeModulesBinPath()
+  if (nodeModulesBin) {
+    process.env.PATH = `${nodeModulesBin}:${process.env.PATH}`
+  }
+
   const args = [
     // Pass all arguments to the process
     ...process.argv.slice(2)
@@ -100,4 +107,12 @@ async function ensureInstalled (version) {
   // Finished
   console.info(`bufbuild installed buf v${installed.version}.`)
   return installed
+}
+
+function getNodeModulesBinPath () {
+  const bufDir = path.dirname(process.argv[1])
+  if (bufDir.endsWith('node_modules/.bin')) {
+    return bufDir
+  }
+  return undefined
 }
