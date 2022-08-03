@@ -1,6 +1,6 @@
 {
   "name": "bufbuild",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Provides Buf binary as NPM package",
   "repository": {
     "type": "git",
